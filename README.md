@@ -1,6 +1,8 @@
 # Loons-lab-project-backend
 
-Technologies:</br>
-Node.js - backend</br>
-React.js - frontend</br>
-Heroku - deployment</br>
+Technologies: 
+<ul>
+  <li>Node.js - backend</li>
+  <li>React.js - frontend</li>
+  <li>Heroku - deployment</li>
+</ul>
