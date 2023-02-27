@@ -1,2 +1,6 @@
 # Loons-lab-project-backend
-Node.js project(backend)
+
+Technologies:
+Node.js - backend
+React.js - frontend
+Heroku - deployment
