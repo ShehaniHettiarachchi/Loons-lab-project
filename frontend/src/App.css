@@ -3,31 +3,31 @@
   padding-bottom: 40px;
 }
 
-.main-heading{
-  font-family: 'Josefin Sans', sans-serif;
+.main-heading {
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 800;
   font-size: 2.5rem;
   color: rgb(4, 60, 56);
 }
 
-.underline{
+.underline {
   height: 4px;
   width: 4rem;
   background-color: rgb(56, 66, 61);
   margin-top: 5px;
   margin-bottom: 15px;
 }
-.sub-heading{
-  font-family: 'Josefin Sans', sans-serif;
+.sub-heading {
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 800;
   font-size: 1.3rem;
   color: rgb(4, 69, 46);
 }
-.bg-c{
+.bg-c {
   background-color: rgb(209, 223, 216);
 }
-.content{
-  font-family: 'Josefin Sans', sans-serif;
+.content {
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 100;
   font-size: 0.8rem;
 }

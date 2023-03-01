@@ -39,8 +39,12 @@ http: router.post("/register", upload.single("customerImage"), (req, res) => {
               date: undefined,
             });
           } else {
-            const customerImage=req.file.originalname
-            const customer = new Customer({...req.body,customerImage,password: hash});
+            const customerImage = req.file.originalname;
+            const customer = new Customer({
+              ...req.body,
+              customerImage,
+              password: hash,
+            });
             customer.save((err, doc) => {
               if (err)
                 return res.json({
@@ -74,7 +78,7 @@ http: router.post("/login", (req, res) => {
         });
       }
       bycrypt.compare(
-        req.body.password, 
+        req.body.password,
         customer.password,
         async (err, result) => {
           if (err) {
@@ -93,13 +97,13 @@ http: router.post("/login", (req, res) => {
               process.env.JWT_KEY,
               {
                 expiresIn: "1h",
-              },
+              }
             );
 
             await customerToken.findOneAndUpdate(
               { _customerId: Customer._Id, tokenType: "login" },
               { token: token },
-              { new: true, upsert: true },
+              { new: true, upsert: true }
             );
             return res.status(200).json({
               status: true,
@@ -116,7 +120,7 @@ http: router.post("/login", (req, res) => {
             message: "Wrong Password",
             date: undefined,
           });
-        },
+        }
       );
     })
     .catch((err) => {
@@ -127,8 +131,6 @@ http: router.post("/login", (req, res) => {
       });
     });
 });
-
-
 
 //Localhost:5000/customer/getCustomer/:id
 http: router.route("/getCustomer/:id").get(async (req, res) => {
