@@ -10,7 +10,7 @@ function Navbar(){
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" style={{ backgroundColor: "#205E61"}} data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" style={{backgroundColor: "#256D85"}}>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" style={{backgroundColor: "#205E61"}}>
                         <div class="offcanvas-header">
                             <button type="button" class="btn-close btn-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>

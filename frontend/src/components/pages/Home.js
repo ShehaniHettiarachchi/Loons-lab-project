@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../includes/Slider';
+import VMC from '../pages/inc/VMC';
 import { Link } from 'react-router-dom';
 
 function Home(){
@@ -24,6 +25,9 @@ function Home(){
                     </div>
                 </div>
             </section>
+
+            {/* company vision & mission*/}
+            <VMC />
         </div>
     );
 }

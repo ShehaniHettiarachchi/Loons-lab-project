@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const customerSchema = new Schema({
   customerImage: {
     type: String,
-   // required: true,
+    required: true,
   },
   firstName: {
     type: String,

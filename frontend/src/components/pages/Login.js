@@ -40,7 +40,7 @@ function Login(){
       
 
     return(
-        <div className='container col-md-6  '>
+        <div className='container col-md-6  ' style={{paddingBottom: "150px", paddingTop: "30px"}}>
            
             <div class="card " style={{borderBlockStartColor: "#205E61", borderBlockStartWidth: "10px"}}>
                 <div class="card-header">

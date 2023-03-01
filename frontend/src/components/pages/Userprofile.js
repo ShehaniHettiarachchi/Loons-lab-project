@@ -9,6 +9,7 @@ function UserProfile() {
     const [lastName, setlastName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [customerImage, setCustomerImage] = useState("");
 
     const navigate = useNavigate();
 
@@ -25,6 +26,7 @@ function UserProfile() {
                 setlastName(res.data.customer.lastName),
                setEmail(res.data.customer.email),
                setPhone(res.data.customer.phone),
+               setCustomerImage(res.data.customer.customerImage)
                 
             ])
             .catch((error) => console.log(error));
@@ -37,7 +39,7 @@ function UserProfile() {
         navigate("/");
     }
     return (
-        <div className='container'>
+        <div className='container' style={{paddingBottom: "150px", paddingTop: "30px"}}>
               
             <div class="card" style={{borderBlockStartColor: "#205E61", borderBlockStartWidth: "10px"}}>
                 <div class="card-header">
@@ -46,10 +48,10 @@ function UserProfile() {
                 <div class="card-body">
                     <form class="row">
                         
-                        <img class="rounded" style={{height:"25%", width: "25%"}}  src="https://static.vecteezy.com/system/resources/previews/009/734/564/original/default-avatar-profile-icon-of-social-media-user-vector.jpg"></img>
+                        <img class="rounded" style={{height:"25%", width: "25%", border: "2px"}}  src={`/uploads/customer/${customerImage}`}></img>
                       
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-3">
                                 <label for="inputEmail4" class="form-label">First Name</label>
                                 <input type="text"
                                     className="form-control"
@@ -61,7 +63,7 @@ function UserProfile() {
                                         
                                 </input>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-3">
                                 <label for="inputPassword4" class="form-label">Last Name</label>
                                 <input type="text"
                                     className="form-control"
@@ -72,7 +74,7 @@ function UserProfile() {
                                 >
                                 </input>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-3">
                                 <label for="inputEmail4" class="form-label">Email</label>
                                 <input
                                     type="email"
@@ -84,7 +86,7 @@ function UserProfile() {
                                 >
                                 </input>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 p-3" style={{paddingBottom: "30px"}}>
                                 <label for="inputEmail4" class="form-label">Contact Number</label>
                                 <input
                                     type="number"

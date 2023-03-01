@@ -9,7 +9,7 @@ const { customerToken } = require("../models/customerToken.js");
 
 const storage = multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, "../frontend/public/images/customer");
+    callback(null, "../frontend/public/uploads/customer");
   },
 
   filename: (req, file, callback) => {
@@ -39,9 +39,8 @@ http: router.post("/register", upload.single("customerImage"), (req, res) => {
               date: undefined,
             });
           } else {
-            const customer = new Customer({
-              ...req.body, password: hash
-            });
+            const customerImage=req.file.originalname
+            const customer = new Customer({...req.body,customerImage,password: hash});
             customer.save((err, doc) => {
               if (err)
                 return res.json({
@@ -129,6 +128,21 @@ http: router.post("/login", (req, res) => {
     });
 });
 
-//Localhost:5000/customer/logout
+
+
+//Localhost:5000/customer/getCustomer/:id
+http: router.route("/getCustomer/:id").get(async (req, res) => {
+  let customerId = req.params.id;
+  const customer = await Customer.findById(customerId)
+    .then((customer) => {
+      res.status(200).send({ status: "Customer data fetch", customer });
+    })
+    .catch(() => {
+      console.log(err.message);
+      res
+        .status(500)
+        .send({ status: "Error with get Customer data", error: err.message });
+    });
+});
 
 module.exports = router;
